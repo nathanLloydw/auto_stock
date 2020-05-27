@@ -141,7 +141,7 @@ class AutoStock:
         self.check_for_edits()
 
         # automate the four main functions every 1, 5 & 10 minutes and 6 hours depending on the function.
-        schedule.every(1).day.do(self.set_active_customers)
+        # schedule.every(1).day.do(self.set_active_customers)
         schedule.every(1).minutes.do(self.goods_out_automator)
         schedule.every(120).minutes.do(self.check_for_edits)
         schedule.every(60).minutes.do(self.goods_in_automator)

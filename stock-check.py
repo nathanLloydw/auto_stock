@@ -103,9 +103,10 @@ class StockCheck:
 
             # if the product is not on the main DB add it else more on to comparing stocks.
             if not mainProduct:
-                print("product not on db")
-                print(TestProduct)
-                Db.add_product(TestProduct)
+                randO = 0
+                # print("product not on db")
+                # print(TestProduct)
+                # Db.add_product(TestProduct)
             else:
                 # if the stock levels are not the same we correct them.
                 if TestProduct[0][5] - mainProduct[0][5] > 0.1 or TestProduct[0][5] - mainProduct[0][5] < -0.1:
@@ -116,7 +117,7 @@ class StockCheck:
                     print(mainProduct)
                     stock = TestProduct[0][5]
                     prdId = TestProduct[0][1]
-                    Db.correct_product_stock(prdId,stock)
+                    #Db.correct_product_stock(prdId,stock)
 
         print(str(count)+" incorrect")
 
@@ -136,11 +137,11 @@ if __name__ == "__main__":
     stock_checker = StockCheck(db,SDataCon)
 
     # running the stock checker class relevant functions.
-    db.delete_test_products()
-    db.delete_test_transactions()
-    stock_checker.addProducts()
-    stock_checker.postInvoices()
-    stock_checker.stockChecks()
+    #db.delete_test_products()
+    #db.delete_test_transactions()
+    #stock_checker.addProducts()
+    #stock_checker.postInvoices()
+    #stock_checker.stockChecks()
 
 
 

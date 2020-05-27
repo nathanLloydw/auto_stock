@@ -1,6 +1,7 @@
 from datetime import date
 import mysql.connector as maria
 
+
 class DbConnection:
 
     def __init__(self,host,user,password,port,database):
